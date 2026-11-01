@@ -6,7 +6,7 @@ Site institucional da Kivun Tech: consultoria em tecnologia para organizar deman
 
 | Desktop | Celular |
 | --- | --- |
-| <img src="./docs/screenshots/home-desktop.jpg" alt="Página inicial da Kivun Tech em desktop" width="720"> | <img src="./docs/screenshots/home-mobile.jpg" alt="Página inicial da Kivun Tech em celular" width="220"> |
+| <img src="./docs/screenshots/home-desktop-novo.png" alt="Página inicial da Kivun Tech em desktop" width="720"> | <img src="./docs/screenshots/home-mobile-novo.png" alt="Página inicial da Kivun Tech em celular" width="220"> |
 
 ## Sobre o projeto
 
