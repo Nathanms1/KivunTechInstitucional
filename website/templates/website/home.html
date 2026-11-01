@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block title %}Kivun Tech | Consultoria em TI, Integrações e Automação{% endblock %}
+
+{% block meta_description %}Consultoria em TI para organizar demandas, integrar sistemas, automatizar processos e dar direção à evolução tecnológica da sua empresa.{% endblock %}
+
+{% block og_title %}Kivun Tech | Consultoria em TI, Integrações e Automação{% endblock %}
+{% block og_description %}Consultoria em TI para organizar demandas, integrar sistemas, automatizar processos e dar direção à evolução tecnológica da sua empresa.{% endblock %}
+{% block twitter_title %}Kivun Tech | Consultoria em TI, Integrações e Automação{% endblock %}
+{% block twitter_description %}Consultoria em TI para organizar demandas, integrar sistemas, automatizar processos e dar direção à evolução tecnológica da sua empresa.{% endblock %}
+
+{% block extra_head %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "A Kivun Tech desenvolve software?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O foco é consultoria, análise e direção técnica. Desenvolvimento de software, infraestrutura e suporte contínuo não fazem parte do escopo do MVP. Quando necessário, o trabalho é articulado com o time ou fornecedor responsável pela implementação."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O atendimento é remoto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. A base é Porto Alegre/RS e o atendimento é remoto. Reuniões e alinhamentos acontecem online, conforme a necessidade do projeto."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual é o porte de empresa atendido?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pequenas e médias empresas, áreas de tecnologia e times de produto que precisam organizar demandas, integrar sistemas ou estruturar requisitos. O escopo é proporcional ao contexto e à capacidade de execução."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como começa um trabalho?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A partir de uma conversa inicial para entender o cenário. Se houver aderência, o próximo passo é definir escopo, entregáveis e formato do diagnóstico ou da consultoria."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como funciona a confidencialidade?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Informações compartilhadas são tratadas com confidencialidade. Quando necessário, o acordo pode ser formalizado antes do início dos trabalhos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como funciona a contratação?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O escopo e os entregáveis são definidos em proposta. O modelo depende da demanda. Não há suporte 24×7, SLA ou plantão contínuo no MVP."
+          }
+        }
+      ]
+    }
+  </script>
+{% endblock %}
+
+{% block content %}
+  {% include 'includes/sections/hero.html' %}
+  {% include 'includes/sections/about.html' %}
+  {% include 'includes/sections/services.html' %}
+  {% include 'includes/sections/differentiators.html' %}
+  {% include 'includes/sections/methodology.html' %}
+  {% include 'includes/sections/experience.html' %}
+  {% include 'includes/sections/faq.html' %}
+  {% include 'includes/sections/contact.html' %}
+{% endblock %}

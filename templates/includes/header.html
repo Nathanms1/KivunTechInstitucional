@@ -1,0 +1,46 @@
+{% load static %}
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="{% url 'website:home' %}" aria-label="Kivun Tech — página inicial">
+      <img src="{% static 'img/logo/kivun-horizontal-dark.png' %}" width="173" height="39" alt="Kivun Tech">
+    </a>
+
+    <nav class="site-nav" aria-label="Navegação principal">
+      <ul class="site-nav__list" id="primary-navigation">
+        <li><a href="{% url 'website:home' %}#sobre">Sobre</a></li>
+        <li><a href="{% url 'website:home' %}#servicos">Serviços</a></li>
+        <li><a href="{% url 'website:home' %}#diferenciais">Diferenciais</a></li>
+        <li><a href="{% url 'website:home' %}#metodologia">Metodologia</a></li>
+        <li><a href="{% url 'website:home' %}#experiencia">Experiência</a></li>
+        <li><a href="{% url 'website:home' %}#faq">FAQ</a></li>
+      </ul>
+
+      <a class="button button--secondary button--nav header-cta" href="{% url 'website:home' %}#contato">
+        <span class="header-cta__long">Falar sobre meu projeto</span>
+        <span class="header-cta__short">Contato</span>
+      </a>
+
+      <details class="mobile-nav">
+        <summary class="mobile-nav__summary" aria-controls="mobile-navigation-panel" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+            <path d="M4 7H20M4 12H20M4 17H20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+          Menu
+        </summary>
+        <div class="mobile-nav__panel" id="mobile-navigation-panel">
+          <ul class="mobile-nav__list">
+            <li><a href="{% url 'website:home' %}#sobre">Sobre</a></li>
+            <li><a href="{% url 'website:home' %}#servicos">Serviços</a></li>
+            <li><a href="{% url 'website:home' %}#diferenciais">Diferenciais</a></li>
+            <li><a href="{% url 'website:home' %}#metodologia">Metodologia</a></li>
+            <li><a href="{% url 'website:home' %}#competencias">Competências</a></li>
+            <li><a href="{% url 'website:home' %}#experiencia">Experiência</a></li>
+            <li><a href="{% url 'website:home' %}#faq">FAQ</a></li>
+            <li><a href="{% url 'website:home' %}#contato">Contato</a></li>
+          </ul>
+          <a class="button mobile-nav__cta" href="{% url 'website:home' %}#contato">Falar sobre meu projeto</a>
+        </div>
+      </details>
+    </nav>
+  </div>
+</header>

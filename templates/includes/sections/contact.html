@@ -1,0 +1,130 @@
+<section id="contato" class="section section--contact" aria-labelledby="contato-title">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-copy">
+        <p class="section-label">08 — Contato</p>
+        <h2 id="contato-title">Vamos conversar sobre o seu projeto</h2>
+        <p class="section-intro">Conte o contexto da sua empresa e o que precisa organizar. A conversa inicial serve para entender se a Kivun Tech pode ajudar e qual seria o próximo passo.</p>
+
+        <div class="contact-channels">
+          <a class="contact-channel" href="https://wa.me/5551984597510?text=Ol%C3%A1%2C%20Nathan.%20Vim%20pelo%20site%20da%20Kivun%20Tech%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp (51) 98459-7510 (abre em nova aba)">
+            <span class="contact-channel__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" focusable="false">
+                <path d="M20 11.5A8 8 0 0 1 12 19.5C10.6 19.5 9.2 19.1 8 18.4L4 19.5L5.1 15.6A8 8 0 1 1 20 11.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M8.7 8.7C9.2 8.2 9.8 8.2 10.1 8.7L10.8 9.9C11 10.2 10.9 10.5 10.7 10.7L10.2 11.2C10.8 12.3 11.7 13.2 12.8 13.8L13.3 13.3C13.5 13.1 13.8 13 14.1 13.2L15.3 13.9C15.8 14.2 15.8 14.8 15.3 15.3C14.6 16 13.5 16.2 12.5 15.8C10.1 14.8 8.2 12.9 7.2 10.5C6.8 9.5 7 8.4 7.7 7.7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="contact-channel__body">
+              <span class="contact-channel__label">WhatsApp</span>
+              <span class="contact-channel__value">(51) 98459-7510</span>
+            </span>
+          </a>
+
+          <a class="contact-channel" href="mailto:nathanms2000@outlook.com?subject=Contato%20pelo%20site%20da%20Kivun%20Tech">
+            <span class="contact-channel__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" focusable="false">
+                <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M4 7L12 13L20 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="contact-channel__body">
+              <span class="contact-channel__label">E-mail</span>
+              <span class="contact-channel__value">nathanms2000@outlook.com</span>
+            </span>
+          </a>
+
+          <a class="contact-channel" href="https://www.linkedin.com/in/nathanmaria2000/" target="_blank" rel="noopener noreferrer">
+            <span class="contact-channel__icon contact-channel__icon--monogram" aria-hidden="true">in</span>
+            <span class="contact-channel__body">
+              <span class="contact-channel__label">LinkedIn</span>
+              <span class="contact-channel__value">/in/nathanmaria2000</span>
+            </span>
+            <span class="visually-hidden">(abre em nova aba)</span>
+          </a>
+        </div>
+
+      </div>
+
+      <form class="contact-card contact-form" method="post" action="{% url 'website:home' %}#contato" aria-labelledby="contact-form-title" aria-describedby="contact-form-note" data-min-submit-time="3" data-success="{% if contact_sent %}true{% else %}false{% endif %}" data-errors="{% if form.errors %}true{% else %}false{% endif %}">
+        {% csrf_token %}
+        <p class="contact-card__label">Formulário de contato</p>
+        <h3 id="contact-form-title">Conte um pouco sobre o seu projeto.</h3>
+        <p class="contact-form__note" id="contact-form-note">As informações serão usadas apenas para responder ao seu contato. Consulte a Política de Privacidade antes de enviar.</p>
+
+        {% if contact_sent %}
+          <p class="form-feedback form-feedback--success" role="status" tabindex="-1">Sua mensagem foi enviada. Obrigado pelo contato; retornarei pelo canal informado.</p>
+        {% endif %}
+
+        {% if form.errors %}
+          <div class="form-feedback form-feedback--error" role="alert" tabindex="-1">
+            <p>Confira as mensagens abaixo e tente novamente.</p>
+            <ul>
+              {% for error in form.non_field_errors %}
+                <li>{{ error }}</li>
+              {% endfor %}
+              {% for field in form.visible_fields %}
+                {% for error in field.errors %}
+                  <li><a href="#{{ field.id_for_label }}">{{ field.label }}: {{ error }}</a></li>
+                {% endfor %}
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+
+        <fieldset class="contact-form__fields"{% if contact_sent %} disabled{% endif %}>
+          <div class="honeypot-field" aria-hidden="true">
+            <label for="{{ form.website.id_for_label }}">Deixe este campo vazio</label>
+            {{ form.website }}
+          </div>
+          {{ form.form_started_at }}
+
+          <div class="contact-form__row">
+            <div class="form-field">
+              <label for="{{ form.name.id_for_label }}">Nome</label>
+              {{ form.name }}
+              <ul class="form-field__errors" id="name-error">{% for error in form.name.errors %}<li>{{ error }}</li>{% endfor %}</ul>
+            </div>
+            <div class="form-field">
+              <label for="{{ form.email.id_for_label }}">E-mail</label>
+              {{ form.email }}
+              <ul class="form-field__errors" id="email-error">{% for error in form.email.errors %}<li>{{ error }}</li>{% endfor %}</ul>
+            </div>
+          </div>
+
+          <div class="contact-form__row">
+            <div class="form-field">
+              <label for="{{ form.company.id_for_label }}">Empresa <span>(opcional)</span></label>
+              {{ form.company }}
+              <ul class="form-field__errors" id="company-error">{% for error in form.company.errors %}<li>{{ error }}</li>{% endfor %}</ul>
+            </div>
+            <div class="form-field">
+              <label for="{{ form.phone.id_for_label }}">Telefone <span>(opcional)</span></label>
+              {{ form.phone }}
+              <ul class="form-field__errors" id="phone-error">{% for error in form.phone.errors %}<li>{{ error }}</li>{% endfor %}</ul>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="{{ form.service.id_for_label }}">Como posso ajudar?</label>
+            {{ form.service }}
+            <ul class="form-field__errors" id="service-error">{% for error in form.service.errors %}<li>{{ error }}</li>{% endfor %}</ul>
+          </div>
+
+          <div class="form-field">
+            <label for="{{ form.message.id_for_label }}">Mensagem</label>
+            {{ form.message }}
+            <ul class="form-field__errors" id="message-error">{% for error in form.message.errors %}<li>{{ error }}</li>{% endfor %}</ul>
+          </div>
+
+          <div class="form-field form-field--consent">
+            {{ form.consent }}
+            <label for="{{ form.consent.id_for_label }}">Concordo com o uso dos dados para retorno deste contato e li a <a href="{% url 'website:privacy_policy' %}">Política de Privacidade</a>.</label>
+            <ul class="form-field__errors" id="consent-error">{% for error in form.consent.errors %}<li>{{ error }}</li>{% endfor %}</ul>
+          </div>
+
+          <button class="button contact-form__submit" type="submit"{% if contact_sent %} disabled{% endif %}>Enviar mensagem</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</section>

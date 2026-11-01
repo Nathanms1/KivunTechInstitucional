@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}Política de Privacidade | Kivun Tech{% endblock %}
+
+{% block meta_description %}Política de Privacidade da Kivun Tech.{% endblock %}
+
+{% block og_title %}Política de Privacidade | Kivun Tech{% endblock %}
+{% block og_description %}Saiba como a Kivun Tech trata os dados enviados pelo formulário de contato.{% endblock %}
+{% block twitter_title %}Política de Privacidade | Kivun Tech{% endblock %}
+{% block twitter_description %}Saiba como a Kivun Tech trata os dados enviados pelo formulário de contato.{% endblock %}
+
+{% block content %}
+  <section class="section" aria-labelledby="privacy-title">
+    <article class="container container--reading privacy-policy">
+      <h1 id="privacy-title">Política de Privacidade</h1>
+      <p>Esta política explica como a Kivun Tech, sob responsabilidade de seu fundador Nathan Maria da Silva, trata os dados enviados pelo formulário deste site. O canal de contato para dúvidas ou solicitações sobre privacidade está disponível na <a href="{% url 'website:home' %}#contato">seção de contato</a>.</p>
+
+      <h2>Dados coletados e finalidade</h2>
+      <p>Quando você envia uma mensagem, são tratados nome, e-mail, empresa e telefone (quando informados), serviço de interesse, conteúdo da mensagem e sua confirmação de consentimento. Esses dados são usados exclusivamente para compreender e responder à solicitação.</p>
+      <p>O formulário também usa campos técnicos para proteção contra spam e para validar a integridade e o tempo de preenchimento. Um campo anti-spam oculto e o instante de abertura do formulário não são usados para identificação ou marketing.</p>
+
+      <h2>Base legal e consentimento</h2>
+      <p>O formulário é enviado mediante consentimento explícito. Você pode retirar o consentimento e solicitar informações sobre seus dados pelo canal de contato indicado nesta página. A retirada não invalida o tratamento realizado antes da solicitação.</p>
+
+      <h2>Envio, compartilhamento e armazenamento</h2>
+      <p>O site é hospedado pela Vercel, que pode processar dados técnicos de acesso, como endereço IP e informações da requisição, e registros operacionais necessários para entregar, proteger e diagnosticar o serviço, conforme suas políticas e configurações de retenção. O conteúdo enviado pelo formulário é encaminhado por SMTP do Google (Gmail) ao responsável pelo atendimento. O site não mantém cadastro de contatos nem grava as mensagens em banco de dados ou em ferramentas de analytics. A mensagem pode permanecer na caixa postal e nos registros técnicos do provedor de e-mail, conforme as respectivas políticas e obrigações aplicáveis.</p>
+      <p>Os dados não são compartilhados para publicidade ou marketing. O provedor de e-mail recebe apenas os dados necessários à entrega da mensagem.</p>
+
+      <h2>Retenção e segurança</h2>
+      <p>As mensagens são mantidas na caixa de e-mail enquanto forem necessárias ao atendimento e podem ser excluídas quando deixarem de ser necessárias, ressalvadas obrigações legais. O site aplica proteções técnicas como conexão segura em produção, validação do formulário, proteção CSRF e mecanismos simples contra automação. Nenhum canal eletrônico pode garantir risco zero.</p>
+
+      <h2>Seus direitos</h2>
+      <p>Nos termos da legislação aplicável, você pode solicitar confirmação do tratamento, acesso, correção, anonimização, bloqueio ou exclusão de dados, informações sobre compartilhamento e revogação do consentimento. Encaminhe a solicitação pelo canal apresentado na <a href="{% url 'website:home' %}#contato">seção de contato</a>.</p>
+
+      <h2>Cookies e tecnologias locais</h2>
+      <p>O formulário utiliza o cookie técnico necessário à proteção CSRF. A limitação de reenvio pode usar o armazenamento de sessão do próprio navegador; esse marcador permanece na aba e não envia dados pessoais ao servidor. Este site não ativa ferramentas de analytics ou cookies publicitários nesta versão.</p>
+
+      <h2>Atualizações</h2>
+      <p>Esta política pode ser atualizada quando o tratamento mudar. Última atualização: 01/11/2026.</p>
+    </article>
+  </section>
+{% endblock %}

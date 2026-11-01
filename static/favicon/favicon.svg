@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 276 276" width="276" height="276" role="img" aria-label="Símbolo Kivun Tech">
+  <defs>
+    <linearGradient id="kivunBlue" x1="0" y1="0" x2="160" y2="130" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#19B6F0"/>
+      <stop offset="1" stop-color="#266FF0"/>
+    </linearGradient>
+    <linearGradient id="kivunPurple" x1="120" y1="60" x2="276" y2="193" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5935E9"/>
+      <stop offset="1" stop-color="#B04DFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="276" height="276" rx="40" fill="#070B18"/>
+  <g transform="translate(16 53) scale(.88)">
+    <path d="M0 0h68v44c0 3-1 6-4 9L0 104z" fill="url(#kivunBlue)"/>
+    <path d="M150 0h103L7 191c-3 3-7 1-7-3v-60c0-3 1-5 4-7z" fill="url(#kivunBlue)"/>
+    <path d="m174 83 52-41 50 151h-91l-62-67z" fill="url(#kivunPurple)"/>
+  </g>
+</svg>

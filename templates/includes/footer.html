@@ -1,0 +1,44 @@
+{% load static %}
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <a class="brand" href="{% url 'website:home' %}" aria-label="Kivun Tech — página inicial">
+          <img src="{% static 'img/logo/kivun-horizontal-dark.png' %}" width="154" height="35" alt="Kivun Tech">
+        </a>
+        <p class="site-footer__tagline">Tecnologia com direção. Do problema de negócio à solução técnica estruturada.</p>
+        <p class="site-footer__location">Porto Alegre/RS · Atendimento remoto</p>
+      </div>
+
+      <nav class="site-footer__nav" aria-label="Navegação do rodapé">
+        <p class="footer-heading">Navegação</p>
+        <ul>
+          <li><a href="{% url 'website:home' %}#sobre">Sobre</a></li>
+          <li><a href="{% url 'website:home' %}#servicos">Serviços</a></li>
+          <li><a href="{% url 'website:home' %}#diferenciais">Diferenciais</a></li>
+          <li><a href="{% url 'website:home' %}#metodologia">Metodologia</a></li>
+          <li><a href="{% url 'website:home' %}#competencias">Competências</a></li>
+          <li><a href="{% url 'website:home' %}#experiencia">Experiência</a></li>
+          <li><a href="{% url 'website:home' %}#faq">FAQ</a></li>
+          <li><a href="{% url 'website:home' %}#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-footer__contact">
+        <p class="footer-heading">Contato</p>
+        <ul>
+          <li><a href="https://wa.me/5551984597510?text=Ol%C3%A1%2C%20Nathan.%20Vim%20pelo%20site%20da%20Kivun%20Tech%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+          <li><a href="mailto:nathanms2000@outlook.com?subject=Contato%20pelo%20site%20da%20Kivun%20Tech">E-mail</a></li>
+          <li><a href="https://www.linkedin.com/in/nathanmaria2000/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com/Nathanms1" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        </ul>
+        <a class="site-footer__privacy" href="{% url 'website:privacy_policy' %}">Política de Privacidade</a>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <p>&copy; {% now "Y" %} Kivun Tech. Todos os direitos reservados.</p>
+      <p>Kivun Tech — tecnologia com direção.</p>
+    </div>
+  </div>
+</footer>

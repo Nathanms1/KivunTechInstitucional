@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Erro interno | Kivun Tech{% endblock %}
+
+{% block meta_description %}Não foi possível concluir esta solicitação.{% endblock %}
+
+{% block meta_robots %}noindex, nofollow{% endblock %}
+{% block og_title %}Erro interno | Kivun Tech{% endblock %}
+{% block og_description %}Não foi possível concluir esta solicitação.{% endblock %}
+{% block twitter_title %}Erro interno | Kivun Tech{% endblock %}
+{% block twitter_description %}Não foi possível concluir esta solicitação.{% endblock %}
+
+{% block content %}
+  <section class="section section--error" aria-labelledby="error-title">
+    <div class="container container--reading">
+      <p class="eyebrow">Erro 500</p>
+      <h1 id="error-title">Não foi possível concluir esta solicitação.</h1>
+      <p>Tente novamente em instantes.</p>
+      <a class="button" href="{% url 'website:home' %}">Voltar ao início</a>
+    </div>
+  </section>
+{% endblock %}

@@ -1,0 +1,132 @@
+﻿@font-face {
+  font-family: 'Geist';
+  src: url('../fonts/Geist-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: dark;
+
+  --font-sans: 'Geist', 'Inter', 'Segoe UI', Arial, sans-serif;
+
+  --color-bg: #070b18;
+  --color-bg-overlay: rgba(7, 11, 24, 0.92);
+  --color-surface: rgba(165, 190, 225, 0.09);
+  --color-surface-hover: rgba(100, 190, 255, 0.1);
+  --color-border: #263148;
+  --color-border-strong: #63728d;
+  --color-text: #f6f8ff;
+  --color-text-strong: #e6ebf5;
+  --color-text-muted: #bcc8de;
+  --color-text-subtle: #94a3bb;
+  --color-accent: #55c7ff;
+  --color-focus: #62caff;
+  --color-error: #ff8da1;
+  --color-success: #70e0b8;
+  --color-brand-start: #19b6f0;
+  --color-brand-mid: #266ff0;
+  --color-brand-end: #914dfb;
+  --color-gradient-start: #5dd4ff;
+  --color-gradient-mid: #4e9bff;
+  --color-gradient-end: #b17cff;
+  --color-button-text: #07101f;
+  --gradient-accent: linear-gradient(90deg, var(--color-gradient-start), var(--color-gradient-mid), var(--color-gradient-end));
+  --gradient-brand: linear-gradient(135deg, var(--color-brand-start), var(--color-brand-mid), var(--color-brand-end));
+  --gradient-divider: linear-gradient(90deg, transparent, var(--color-border), transparent);
+
+  --font-weight-extralight: 200;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+
+  --font-size-hero-sm: 3rem;
+  --line-height-hero-sm: 1.1;
+  --font-size-hero-lg: 4.5rem;
+  --line-height-hero-lg: 5.625rem;
+  --tracking-hero: -0.05em;
+
+  --font-size-logo: 1.5rem;
+  --line-height-logo: 2rem;
+  --tracking-logo: -0.025em;
+
+  --font-size-h2-sm: 1.5rem;
+  --line-height-h2-sm: 2rem;
+  --font-size-h2-lg: 1.875rem;
+  --line-height-h2-lg: 2.25rem;
+
+  --font-size-h3: 1.25rem;
+  --line-height-h3: 1.75rem;
+
+  --font-size-lead-sm: 1.25rem;
+  --line-height-lead-sm: 2rem;
+  --font-size-lead-lg: 1.5rem;
+  --line-height-lead-lg: 2rem;
+  --tracking-lead: 0.025em;
+
+  --font-size-body: 1rem;
+  --line-height-body: 1.625rem;
+
+  --font-size-nav: 0.875rem;
+  --line-height-nav: 1.25rem;
+
+  --font-size-small: 0.875rem;
+  --line-height-small: 1.25rem;
+
+  --font-size-xs: 0.75rem;
+  --line-height-xs: 1rem;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-7: 1.75rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-14: 3.5rem;
+  --space-20: 5rem;
+  --space-32: 8rem;
+
+  --radius-md: 0.375rem;
+  --radius-full: 9999px;
+  --radius-logo: 0.625rem;
+
+  --shadow-hero: 0 2px 24px rgba(34, 157, 241, 0.28);
+
+  --container-max: 80rem;
+  --container-padding: var(--space-6);
+  --reading-wide: 48rem;
+  --reading-default: 42rem;
+  --reading-narrow: 32rem;
+
+  --header-height: 4.5rem;
+
+  --duration-fast: 150ms;
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+
+  --z-background: 0;
+  --z-content: 10;
+  --z-whatsapp: 40;
+  --z-header: 50;
+  --z-menu: 60;
+  --z-skip-link: 100;
+
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  --breakpoint-2xl: 96rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+  }
+}

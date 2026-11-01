@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Página não encontrada | Kivun Tech{% endblock %}
+
+{% block meta_description %}A página solicitada não foi encontrada.{% endblock %}
+
+{% block meta_robots %}noindex, nofollow{% endblock %}
+{% block og_title %}Página não encontrada | Kivun Tech{% endblock %}
+{% block og_description %}A página solicitada não foi encontrada.{% endblock %}
+{% block twitter_title %}Página não encontrada | Kivun Tech{% endblock %}
+{% block twitter_description %}A página solicitada não foi encontrada.{% endblock %}
+
+{% block content %}
+  <section class="section section--error" aria-labelledby="error-title">
+    <div class="container container--reading">
+      <p class="eyebrow">Erro 404</p>
+      <h1 id="error-title">Página não encontrada.</h1>
+      <p>O endereço informado não existe ou foi movido.</p>
+      <a class="button" href="{% url 'website:home' %}">Voltar ao início</a>
+    </div>
+  </section>
+{% endblock %}
