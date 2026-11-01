@@ -1,31 +1,89 @@
 # Kivun Tech
 
-Site institucional da Kivun Tech, desenvolvido com Django.
+Site institucional da Kivun Tech: consultoria em tecnologia para organizar demandas, integrar sistemas e apoiar a evolução tecnológica de empresas.
 
-## Desenvolvimento local
+## Prévia
 
-No PowerShell, na pasta do projeto:
+| Desktop | Celular |
+| --- | --- |
+| <img src="./docs/screenshots/home-desktop.jpg" alt="Página inicial da Kivun Tech em desktop" width="720"> | <img src="./docs/screenshots/home-mobile.jpg" alt="Página inicial da Kivun Tech em celular" width="220"> |
+
+## Sobre o projeto
+
+O site apresenta os serviços, a metodologia de trabalho e a experiência profissional da Kivun Tech. Também oferece um formulário para contato e uma página de política de privacidade.
+
+### Funcionalidades
+
+- Apresentação dos serviços de consultoria em TI, análise de sistemas, integrações, automação, dados e observabilidade.
+- Formulário de contato com validação e medidas básicas contra spam.
+- Layout responsivo, navegação acessível e páginas de erro personalizadas.
+- Metadados para compartilhamento, sitemap e `robots.txt`.
+
+## Tecnologias
+
+- Python 3.12 ou superior
+- Django 6.1
+- SQLite
+- HTML, CSS e JavaScript
+
+As dependências Python estão fixadas em [`requirements.txt`](./requirements.txt).
+
+## Executar localmente
+
+### Requisitos
+
+- Python 3.12 ou superior
+- Git
+
+Clone o repositório e entre na pasta do projeto:
+
+```shell
+git clone https://github.com/Nathanms1/KivunTechInstitucional.git
+cd KivunTechInstitucional
+```
+
+### Windows (PowerShell)
 
 ```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
+py -3.12 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+$env:DJANGO_DEBUG = "True"
+.\.venv\Scripts\python.exe manage.py migrate
+.\.venv\Scripts\python.exe manage.py runserver
+```
+
+### macOS ou Linux
+
+```shell
+python3 -m venv .venv
+source .venv/bin/activate
 python -m pip install -r requirements.txt
-$env:DJANGO_DEBUG = 'True'
+export DJANGO_DEBUG=True
+python manage.py migrate
 python manage.py runserver
 ```
 
-Abra `http://127.0.0.1:8000/`. O arquivo `.env.example` é apenas uma referência: o projeto não carrega arquivos `.env` automaticamente. Em desenvolvimento, o envio de e-mail usa o backend de console, a menos que SMTP seja configurado explicitamente no ambiente.
+Abra <http://127.0.0.1:8000/> no navegador. Para executar as verificações e os testes, use:
 
-## Publicação na Vercel
+```shell
+python manage.py check
+python manage.py test
+```
 
-Conecte o repositório GitHub à Vercel. O endereço HTTPS `*.vercel.app` fornecido pelo projeto pode ser usado inicialmente, sem domínio próprio. Cadastre as configurações de produção em **Project Settings → Environment Variables**, nunca no código ou em arquivos versionados.
+No PowerShell, se não ativar o ambiente virtual, substitua `python` por `.\.venv\Scripts\python.exe`.
 
-Configure `DJANGO_DEBUG=False`, uma `DJANGO_SECRET_KEY` forte e aleatória, `DJANGO_ALLOWED_HOSTS` com o host atribuído ao projeto e `DJANGO_CSRF_TRUSTED_ORIGINS` com a origem HTTPS correspondente. Para habilitar o formulário, cadastre também as variáveis SMTP indicadas em `.env.example`, incluindo a senha de app do provedor como segredo. Gere um novo deploy após alterar variáveis.
+## Configuração
 
-A Vercel detecta projetos Django pelo `manage.py` e coleta os arquivos configurados em `STATIC_ROOT`. Confirme no deploy que o formulário, HTTPS, páginas e arquivos estáticos estão funcionando.
+O projeto lê configurações do ambiente e **não carrega arquivos `.env` automaticamente**. O arquivo [`.env.example`](./.env.example) é apenas uma referência.
 
-## Conteúdo do repositório
+Para desenvolvimento local, basta definir `DJANGO_DEBUG=True`. O envio de e-mail usa o backend de console por padrão, que imprime as mensagens no terminal. Para enviar e-mails reais, configure as variáveis SMTP disponíveis em `.env.example`.
 
-O repositório contém apenas os arquivos necessários para executar e servir o site, além deste guia e do exemplo de configuração. O `.gitignore` exclui o banco de dados local, ambientes virtuais, segredos, capturas de tela, currículo, documentação interna e materiais de referência.
+Em produção, configure pelo gerenciador de segredos da plataforma:
 
-Os dados profissionais e canais de contato que aparecem nas páginas são conteúdo intencionalmente público do próprio site. Antes de publicar, confirme que esses dados e os logos exibidos têm aprovação para divulgação. Nunca inclua senhas, chaves, dados de clientes ou cópias privadas de documentos no repositório.
+- `DJANGO_DEBUG=False`
+- `DJANGO_SECRET_KEY` com uma chave aleatória e protegida
+- `DJANGO_ALLOWED_HOSTS` com os hosts permitidos
+- `DJANGO_CSRF_TRUSTED_ORIGINS` com as origens HTTPS confiáveis
+- Variáveis SMTP e `CONTACT_EMAIL` para habilitar o envio do formulário
+
+Nunca inclua segredos no código ou no controle de versão. A publicação requer uma plataforma compatível com Django, configuração do processo de inicialização e coleta dos arquivos estáticos com `python manage.py collectstatic --noinput`. Consulte a documentação da plataforma escolhida para os detalhes do deploy.
