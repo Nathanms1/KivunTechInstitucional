@@ -27,16 +27,33 @@ if (servicesTrack) {
     serviceControls.forEach((control) => {
       const direction = Number(control.dataset.servicesDirection);
       control.disabled = direction < 0
-        ? servicesTrack.scrollLeft <= 1
-        : servicesTrack.scrollLeft + servicesTrack.clientWidth >= servicesTrack.scrollWidth - 1;
+        ? firstIndex === 0
+        : firstIndex >= serviceCards.length - visibleCount;
     });
   };
 
   serviceControls.forEach((control) => {
     control.addEventListener('click', () => {
+      const gap = Number.parseFloat(window.getComputedStyle(servicesTrack).columnGap) || 0;
+      const cardStride = serviceCards[0].getBoundingClientRect().width + gap;
+      const firstIndex = Math.min(
+        serviceCards.length - 1,
+        Math.max(0, Math.round(servicesTrack.scrollLeft / cardStride)),
+      );
+      const visibleCount = Math.max(
+        1,
+        Math.floor((servicesTrack.clientWidth + gap) / cardStride),
+      );
+      const lastStartIndex = Math.max(0, serviceCards.length - visibleCount);
+      const direction = Number(control.dataset.servicesDirection);
       const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      servicesTrack.scrollBy({
-        left: servicesTrack.clientWidth * Number(control.dataset.servicesDirection),
+      const targetIndex = Math.min(
+        lastStartIndex,
+        Math.max(0, firstIndex + visibleCount * direction),
+      );
+
+      servicesTrack.scrollTo({
+        left: targetIndex * cardStride,
         behavior: reducedMotion ? 'auto' : 'smooth',
       });
     });
