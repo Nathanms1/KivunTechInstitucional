@@ -179,13 +179,13 @@ SECURE_REFERRER_POLICY = 'strict-origin-when-cross-origin'
 SECURE_CSP = {
     'default-src': [CSP.SELF],
     'base-uri': [CSP.SELF],
-    'connect-src': [CSP.SELF],
+    'connect-src': [CSP.SELF, 'https://vitals.vercel-insights.com'],
     'font-src': [CSP.SELF],
     'form-action': [CSP.SELF],
     'frame-ancestors': [CSP.NONE],
     'img-src': [CSP.SELF, 'data:'],
     'object-src': [CSP.NONE],
-    'script-src': [CSP.SELF],
+    'script-src': [CSP.SELF, "'unsafe-inline'"],
     'style-src': [CSP.SELF],
 }
 
